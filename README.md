@@ -10,7 +10,7 @@
 
 Получилось достаточно сумбурно, но что есть.
 
-Inputs: 
+*Inputs*: 
 
 1) папка "archive" с изображениями и файлами "list_attr_celeba.csv", "list_bbox_celeba.csv", скаченными отсюда:
 
@@ -20,11 +20,11 @@ https://www.kaggle.com/datasets/kevinpatel04/celeba-original-wild-images
 
 https://mmlab.ie.cuhk.edu.hk/projects/CelebA.html
 
-Outputs: 
+*Outputs*: 
 
 ничего :)
 
-Выводы:
+*Выводы*:
 
 1) Распределение картинок по аттрибутам выглядит разумным, типа Male около 50%, мало с очками и шляпами и прочее
 
