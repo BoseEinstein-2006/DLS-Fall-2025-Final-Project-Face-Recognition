@@ -52,7 +52,7 @@ https://mmlab.ie.cuhk.edu.hk/projects/CelebA.html
 
 **Outputs:**
 
-1) папка selected images с отобранными картинками и "selected_images.csv", где записаны image_id, attrbiutes и прочее для отобранных картинок
+1) папка data-for-alignment с отобранными картинками и "selected_images.csv", где записаны image_id, attrbiutes и прочее для отобранных картинок
 
 Все это я положил на свой Google Drive здесь:
 
@@ -72,11 +72,11 @@ https://mmlab.ie.cuhk.edu.hk/projects/CelebA.html
 
 С Шага 1 берем:
 
-1) папка selected images с отобранными картинками и "selected_images.csv", где записаны image_id, attrbiutes и прочее для отобранных картинок
+1) папка data-for-alignment с отобранными картинками и "selected_images.csv", где записаны image_id, attrbiutes и прочее для отобранных картинок
 
 **Outputs:**
 
-1) папка results_alignment c выровненными картинки, "aligned_pred_all.csv" с image_id и identiry и best_stacked_hg.pth с лучшими весами для Stacked Hourglass
+1) папка data-for-recognition c выровненными картинки, "aligned_pred_all.csv" с image_id и identiry и best_stacked_hg.pth с лучшими весами для Stacked Hourglass
    
 Все это я положил на свой Google Drive здесь:
 
