@@ -2,6 +2,8 @@
 
 В этом репрезитории собраны ноутбуки, ссылки и прочеее, что я использовал для финального проекта по Face Recognition для DLS по курсу Deep Learning (семестр 1, весна 2025).
 
+Все inputs/outputs для различных шагов я положил на свой Google Drive здесь:
+
 # Основные задания
 
 ## Шаг 0: предварительный анализ данных
@@ -54,7 +56,7 @@ https://mmlab.ie.cuhk.edu.hk/projects/CelebA.html
 
 1) папка data-for-alignment с отобранными картинками и "selected_images.csv", где записаны image_id, attrbiutes и прочее для отобранных картинок
 
-Все это я положил на свой Google Drive здесь:
+Все это я положил на свой Google Drive:
 
 **Описание и Выводы:**
 
@@ -68,20 +70,47 @@ https://mmlab.ie.cuhk.edu.hk/projects/CelebA.html
 
 **2_Face_alignment.ipynb**
 
+В этом ноутбуке я обучаю Stacked Hourglass. Этот ноутбук я использовал на Каггле, на GPU T4 x2 заняло порядка 4 часов.
+
 **Inputs:** 
 
 С Шага 1 берем:
 
-1) папка data-for-alignment с отобранными картинками и "selected_images.csv", где записаны image_id, attrbiutes и прочее для отобранных картинок
+1) папку data-for-alignment с отобранными картинками и "selected_images.csv", где записаны image_id, attrbiutes и прочее для отобранных картинок
 
 **Outputs:**
 
 1) папка data-for-recognition c выровненными картинки, "aligned_pred_all.csv" с image_id и identiry и best_stacked_hg.pth с лучшими весами для Stacked Hourglass
    
-Все это я положил на свой Google Drive здесь:
+Все это я положил на свой Google Drive:
 
 **Описание и Выводы:**
 
-1) Логика следующая: берем картинки из selected images, обрезаем их по bbox с уменьшенным на 5% маржином, потом приводим их к одному размеру и обучаем на них Stacked Hourglass
+1) Берем картинки из selected images, обрезаем их по bbox с уменьшенным на 5% маржином, потом приводим их к одному размеру и обучаем на них Stacked Hourglass
 2) Потом применяем к картинкам аффинное преобразование, чтобы выровнять их
 3) Проходим по всем картинкам и из выровненные версии сохваняем в results_alignment для шага 3
+4) лучший NME на тесте 
+
+## Шаг 3: распознование на CE и Arcface
+
+**3_Face_recognition.ipynb**
+
+В этом ноутбуке я обучаю ceтку распозновать лица на CE и Arcface. Этот ноутбук я использовал на Каггле, на GPU T4 x2 заняло порядка 3 часов.
+
+**Inputs:** 
+
+С Шага 2 берем:
+
+1) папку data-for-recognition c выровненными картинки, "aligned_pred_all.csv" с image_id и identiry
+
+**Outputs:**
+
+1) best_af.pth с лучшими весами для модели с Arcface
+   
+Все это я положил на свой Google Drive:
+
+**Описание и Выводы:**
+
+1) Берем картинки из data-for-recognition и обучаем на них модель с CE и Arcface
+2) На тесте best accuracy для СУ: , а для Arcface 
+3) В задании бьло написано "Написать небольшой отчет по обучению, сравнить CE loss и ArcFace loss", но я если честно не знаю, что тут писать кроме каких-то общих слов. я построил t-SNE, гистограммы для cosine similarity и ROC для СE и Arcface. И везде Arcface показывает ожидаенные результаты 
