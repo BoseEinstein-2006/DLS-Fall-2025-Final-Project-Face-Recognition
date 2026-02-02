@@ -4,6 +4,8 @@
 
 **Все inputs/outputs для различных шагов я положил на свой Google Drive здесь:**
 
+https://drive.google.com/drive/folders/1irpKd4v7R_AUPHtrwKsynkvGED7B12K9?usp=sharing
+
 # Основные задания
 
 ## Шаг 0: предварительный анализ данных
