@@ -2,7 +2,7 @@
 
 В этом репрезитории собраны ноутбуки, которые я использовал для финального проекта по Face Recognition для DLS по курсу Deep Learning (семестр 1, весна 2025).
 
-**Все inputs/outputs для различных шагов я положил на свой Google Drive здесь:**
+**!!! Все inputs/outputs для различных шагов я положил на свой Google Drive здесь: !!!**
 
 https://drive.google.com/drive/folders/1irpKd4v7R_AUPHtrwKsynkvGED7B12K9?usp=sharing
 
