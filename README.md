@@ -134,3 +134,49 @@ https://mmlab.ie.cuhk.edu.hk/projects/CelebA.html
 **Описание и Выводы:**
 
 На мой взгляд получилось неплохо, учитывая простоту моделей. Cosine similarity на большинстве картинок конечно невысокая, но референс уверенно попадает в топ1, поэтому пайплайн работает.
+
+# Дополнительные задания
+
+## Шаг 5: Реализация Identification Rate Metric
+
+**5_Face_Recognition_Identification.ipynb**
+
+В этом ноутбуке я написал Identification Rate Metric. Этот ноутбук я использовал на Каггле, на GPU T4 x2 заняло порядка 2.5 часов.
+
+**Inputs:** 
+
+С Шага 2 берем:
+
+1) папку data-for-recognition c выровненными картинки, "aligned_pred_all.csv" с image_id и identiry
+
+**Outputs:**
+
+Нет
+
+**Описание и Выводы:**
+
+1) Код повторяет 3_Face_recognition.ipynb, в конце я дописал подсчет Identification Rate Metric для CE и Arcface.
+2) При высоком FPR CE даже немного лучше, но при низком FPR ArcFace выигрывает, как и ожидалось
+
+## Шаг 6: Реализация Triplet loss
+
+**6_Face_Recognition_Triplet.ipynb**
+
+В этом ноутбуке я написал Triplet loss. Этот ноутбук я использовал на Каггле, на GPU T4 x2 заняло порядка 3.5 часов.
+
+**Inputs:** 
+
+С Шага 2 берем:
+
+1) папку data-for-recognition c выровненными картинки, "aligned_pred_all.csv" с image_id и identiry
+
+**Outputs:**
+
+Нет
+
+**Описание и Выводы:**
+
+1) Код во многом повторяет 3_Face_recognition.ipynb но с Triplet loss
+2) В качестве метрики я взял процент триплетов, где расстояние между anchor и positive меньше чем между anchor и negative, вот здесь это упоминается:
+https://discuss.pytorch.org/t/model-accuracy-with-contrastive-loss-and-triplet-loss/57807
+3) На тесте получил с такой метрикой 91%, что больше 50%, что уже хорошо :)
